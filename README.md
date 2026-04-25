@@ -1,6 +1,37 @@
 # AlternanciaAngularAlbertoLucchetti
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.8.
+Aplicación Angular con sistema de routing implementado. Esta es la base para los ejercicios de la alternancia.
+
+## Ejercicio 1.1: Sistema de Routing
+
+### Descripción
+Se ha implementado un sistema de navegación con tres secciones principales:
+- **Inicio**: Pantalla de bienvenida con descripción del proyecto
+- **Servicios**: Galería de servicios y blog
+- **Contacto**: Formulario de contacto reactivo
+
+### Características Implementadas
+✓ Navegación con RouterModule  
+✓ Actualización dinámica del contenido sin recargar la página  
+✓ Indicador visual de la sección activa en la barra de navegación  
+✓ Componentes standalone  
+✓ Formulario reactivo con validación  
+
+### Estructura del Proyecto
+```
+src/app/
+├── components/
+│   ├── inicio/
+│   │   └── inicio.ts
+│   ├── servicios/
+│   │   └── servicios.ts
+│   └── contacto/
+│       └── contacto.ts
+├── app.ts              # Componente raíz
+├── app.routes.ts       # Configuración de rutas
+├── app.html            # Template con navegación
+└── app.css             # Estilos globales
+```
 
 ## Development server
 

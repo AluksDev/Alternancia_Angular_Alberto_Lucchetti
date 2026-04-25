@@ -1,0 +1,43 @@
+.inicio-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.description {
+  background: #f9f9f9;
+  padding: 2rem;
+  border-radius: 8px;
+  line-height: 1.6;
+}
+
+.description h2 {
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.description p {
+  margin-bottom: 1.5rem;
+  color: #666;
+  text-align: justify;
+}
+
+.description p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .inicio-container {
+    padding: 1rem;
+  }
+
+  .description {
+    padding: 1.5rem;
+  }
+}
