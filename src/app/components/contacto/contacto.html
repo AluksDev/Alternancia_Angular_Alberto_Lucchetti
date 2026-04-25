@@ -1,3 +1,60 @@
-<div>
-  <h1>Contacto</h1>
-</div>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+  <!-- NOMBRE -->
+  <div>
+    <label>Nombre</label>
+    <input
+      type="text"
+      formControlName="nombre"
+      (blur)="onBlur('nombre')"
+    />
+
+    <small *ngIf="form.controls.nombre.touched && form.controls.nombre.hasError('required')">
+      El nombre es obligatorio
+    </small>
+  </div>
+
+  <!-- EMAIL -->
+  <div>
+    <label>Email</label>
+    <input
+      type="email"
+      formControlName="email"
+      (blur)="onBlur('email')"
+    />
+
+    <small *ngIf="form.controls.email.touched && form.controls.email.hasError('required')">
+      El email es obligatorio
+    </small>
+
+    <small *ngIf="form.controls.email.touched && form.controls.email.hasError('email')">
+      El formato del email no es válido
+    </small>
+  </div>
+
+  <!-- MENSAJE -->
+  <div>
+    <label>Mensaje</label>
+    <textarea
+      formControlName="mensaje"
+      (blur)="onBlur('mensaje')"
+    ></textarea>
+
+    <span>
+      Numero de letras: {{ letters() }}
+    </span>
+    <small *ngIf="form.controls.mensaje.touched && form.controls.mensaje.hasError('required')">
+      El mensaje es obligatorio
+    </small>
+
+    <small *ngIf="form.controls.mensaje.touched && form.controls.mensaje.hasError('minlength')">
+      El mensaje debe tener al menos 10 caracteres
+    </small>
+  </div>
+
+  <!-- BOTÓN -->
+  <button type="submit" [disabled]="form.invalid">
+    Enviar
+  </button>
+
+</form>
