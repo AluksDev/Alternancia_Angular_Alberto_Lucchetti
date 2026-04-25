@@ -1,8 +1,13 @@
+/* ===================== */
+/* GALLERY */
+/* ===================== */
+
 .gallery-container {
   max-width: 900px;
   margin: 40px auto;
   text-align: center;
   font-family: Arial, sans-serif;
+  color: var(--text);
 }
 
 /* IMAGEN PRINCIPAL */
@@ -16,7 +21,7 @@
   max-height: 450px;
   object-fit: cover;
   border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-medium);
 }
 
 /* MINIATURAS */
@@ -33,34 +38,40 @@
   object-fit: cover;
   border-radius: 8px;
   cursor: pointer;
-  opacity: 0.7;
+  opacity: var(--thumb-opacity);
   border: 2px solid transparent;
   transition: all 0.2s ease-in-out;
 }
 
 .thumbnails img:hover {
   transform: scale(1.05);
-  opacity: 1;
+  opacity: var(--thumb-hover-opacity);
 }
 
 /* SELECTED IMAGE */
 .thumbnails img.selected {
-  border-color: #4a90e2;
+  border-color: var(--primary);
   opacity: 1;
   transform: scale(1.1);
 }
+
+/* ===================== */
+/* BLOG */
+/* ===================== */
+
 .blog-container {
   max-width: 800px;
   margin: 40px auto;
   font-family: Arial, sans-serif;
+  color: var(--text);
 }
 
 .post-form {
   padding: 20px;
-  background: #fff;
+  background: var(--surface);
   border-radius: 12px;
   margin-bottom: 30px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  box-shadow: var(--shadow-soft);
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -69,17 +80,24 @@
 .post-form input,
 .post-form textarea {
   padding: 10px;
-  border: 1px solid #ddd;
+  border: 1px solid var(--border);
   border-radius: 8px;
+  color: var(--text);
+  background: var(--surface);
 }
 
 .post-form button {
   padding: 10px;
-  background: #4a90e2;
+  background: var(--primary);
   color: white;
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.post-form button:hover {
+  opacity: 0.9;
 }
 
 .posts {

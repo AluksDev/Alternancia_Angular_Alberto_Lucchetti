@@ -1,3 +1,4 @@
+
 * {
   margin: 0;
   padding: 0;
@@ -6,22 +7,25 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f5f5f5;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #f5f5f5;
+  background-color: var(--bg);
+  color: var(--text);
 }
 
+/* NAVBAR */
 .navbar {
-  background-color: #2c3e50;
+  background-color: var(--navbar);
   padding: 0;
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow);
 }
 
 .navbar-container {
@@ -39,7 +43,7 @@ body {
 }
 
 .brand-name {
-  color: white;
+  color: var(--text-light);
   font-size: 1.5rem;
   font-weight: bold;
   text-decoration: none;
@@ -47,9 +51,10 @@ body {
 }
 
 .brand-name:hover {
-  color: #3498db;
+  color: var(--primary);
 }
 
+/* NAV MENU */
 .nav-menu {
   display: flex;
   list-style: none;
@@ -57,13 +62,9 @@ body {
   align-items: center;
 }
 
-.nav-menu li {
-  margin: 0;
-}
-
 .nav-link {
   display: block;
-  color: #ecf0f1;
+  color: var(--text-light);
   text-decoration: none;
   padding: 1rem 1.5rem;
   transition: all 0.3s ease;
@@ -72,19 +73,20 @@ body {
 }
 
 .nav-link:hover {
-  background-color: rgba(52, 152, 219, 0.1);
-  color: #3498db;
+  background-color: var(--hover);
+  color: var(--primary);
 }
 
 .nav-link.active {
-  color: #3498db;
-  background-color: rgba(52, 152, 219, 0.2);
-  border-bottom: 3px solid #3498db;
+  color: var(--primary);
+  background-color: var(--active);
+  border-bottom: 3px solid var(--primary);
 }
 
+/* MAIN CONTENT */
 .main-content {
   min-height: calc(100vh - 70px);
-  background-color: #ffffff;
+  background-color: var(--surface);
   animation: fadeIn 0.3s ease-in;
 }
 
@@ -97,7 +99,7 @@ body {
   }
 }
 
-/* Responsive design */
+/* RESPONSIVE */
 @media (max-width: 768px) {
   .navbar-container {
     padding: 1rem;
@@ -111,13 +113,9 @@ body {
     padding: 0.75rem 1rem;
     font-size: 0.95rem;
   }
-
-  .nav-menu {
-    gap: 0;
-  }
 }
 
-/* Scroll behavior smooth */
+/* SMOOTH SCROLL */
 html {
   scroll-behavior: smooth;
 }

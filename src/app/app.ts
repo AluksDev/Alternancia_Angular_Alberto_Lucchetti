@@ -25,4 +25,18 @@ export class App {
   isActive(route: string): boolean {
     return this.currentRoute() === route;
   }
+  ngOnInit() {
+  document.documentElement.setAttribute('data-theme', 'light');
+}
+toggleTheme() {
+  const root = document.documentElement;
+  console.log(root)
+  const current = root.getAttribute('data-theme');
+
+  if (current === 'dark') {
+    root.setAttribute('data-theme', 'light');
+  } else {
+    root.setAttribute('data-theme', 'dark');
+  }
+}
 }
