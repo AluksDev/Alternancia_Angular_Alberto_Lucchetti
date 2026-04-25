@@ -21,6 +21,50 @@
       [ngClass]="{ selected: img.src === selectedImage.src }"
     />
   </div>
+<div class="blog-container">
+
+  <!-- FORMULARIO -->
+  <form [formGroup]="form" (ngSubmit)="addPost()" class="post-form">
+
+    <h2>Crear Post</h2>
+
+    <input
+      type="text"
+      placeholder="Título"
+      formControlName="title"
+    />
+    <small *ngIf="form.controls.title.touched && form.controls.title.invalid">
+      El título es obligatorio
+    </small>
+
+    <textarea
+      placeholder="Descripción"
+      formControlName="description"
+    ></textarea>
+
+    <small *ngIf="form.controls.description.touched && form.controls.description.hasError('required')">
+      La descripción es obligatoria
+    </small>
+
+    <small *ngIf="form.controls.description.touched && form.controls.description.hasError('minlength')">
+      Mínimo 10 caracteres
+    </small>
+
+    <button type="submit" [disabled]="form.invalid">
+      Publicar
+    </button>
+
+  </form>
+
+  <!-- POSTS -->
+  <div class="posts">
+    <app-blog-card
+      *ngFor="let post of posts"
+      [post]="post"
+      (delete)="deletePost($event)"
+    ></app-blog-card>
+  </div>
 
 </div>
 </div>
+</div>  
