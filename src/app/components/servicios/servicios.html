@@ -1,3 +1,26 @@
 <div>
   <h1>Servicios</h1>
+  <h2>Galeria de imagenes</h2>
+  <div class="gallery-container">
+
+  <!-- IMAGEN PRINCIPAL -->
+  <div class="main-image" *ngIf="selectedImage">
+    <img
+      [src]="selectedImage.src"
+      [alt]="selectedImage.alt"
+    />
+  </div>
+
+  <!-- MINIATURAS -->
+  <div class="thumbnails">
+    <img
+      *ngFor="let img of images"
+      [src]="img.src"
+      [alt]="img.alt"
+      (click)="selectImage(img)"
+      [ngClass]="{ selected: img.src === selectedImage.src }"
+    />
+  </div>
+
+</div>
 </div>
