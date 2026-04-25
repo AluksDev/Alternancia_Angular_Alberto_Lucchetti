@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+:root {
+  --bg: #f5f5f5;
+  --surface: #ffffff;
+  --text: #2c3e50;
+  --text-light: #ecf0f1;
+  --primary: #3498db;
+  --navbar: #2c3e50;
+  --hover: rgba(52, 152, 219, 0.1);
+  --active: rgba(52, 152, 219, 0.2);
+  --shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] {
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --text: #ecf0f1;
+  --text-light: #ecf0f1;
+  --primary: #4aa3ff;
+  --navbar: #1a1a1a;
+  --hover: rgba(74, 163, 255, 0.15);
+  --active: rgba(74, 163, 255, 0.25);
+  --shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+}
